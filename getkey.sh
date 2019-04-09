@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PWD=$(pwd)
+BSD=$(pwd)
 DIR="/home/quadrans/.quadrans/keystore"
 PAS=$(cat "/home/quadrans/password.txt")
 
@@ -21,7 +21,7 @@ echo -e $RESET
 cd $DIR
 for W in $(ls UTC*)
 do
-  K=$($PWD/gk $W $PAS)
+  K=$($BSD/gk $W $PAS)
   if [[ "$K" != "" ]]; then
     echo;echo "----------------------------------------------------"
     echo; echo -e $WHITE$BOLD* "Wallet file:";echo -e $RESET
