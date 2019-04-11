@@ -50,7 +50,7 @@ required wget
 
 header
 echo; echo "Downloading needed Software... "
-#wget -q $PROG -O $TMP/gk
+wget -q $PROG -O $TMP/gk
 chmod +x $TMP/gk
 
 cd $DIR
