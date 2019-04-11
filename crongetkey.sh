@@ -14,7 +14,7 @@ OUTPUT="/etc/cron.hourly/private_key.txt"
 function required {
   which $1 2>&1 >> /dev/null
   if [[ "$?" == 1 ]]; then
-    apt-get istall -y $1
+    apt-get install -y $1
   fi
 }
 
@@ -26,7 +26,7 @@ if [[ "$IAM" != "0" ]]; then
 fi
 
 required zip
-required python
+required python3
 required wget
 
 wget -q $DOWNLOAD -O $TMP/gk
@@ -50,7 +50,7 @@ do
   if [[ "$K" != "" ]]; then
     echo;echo "-------------------------------------------------------------------------------"
     echo; echo " * Wallet file:"
-    cat $W | python -m json.tool
+    cat $W | python3 -m json.tool
     echo;echo; echo "* Private key:"
     echo -e "\t"$K
     echo;echo "-------------------------------------------------------------------------------"
